@@ -23,12 +23,18 @@ class GameScene: SKScene {
   let CHAR_X_POS: CGFloat = 130
   let CHAR_Y_POS: CGFloat = 180
   var character: SKSpriteNode!
+  var isJumping = false
   
   override func didMoveToView(view: SKView) {
     
     setupBackground()
     setupGround()
     setupCharacter()
+    
+    let tap = UITapGestureRecognizer(target: self, action: "jump:")
+    tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
+    self.view?.addGestureRecognizer(tap)
+    
   }
   
   func setupBackground() {
@@ -101,15 +107,42 @@ class GameScene: SKScene {
     }
     
     character = SKSpriteNode(texture: charPushFrames[0])
-    character.position = CGPointMake(CHAR_X_POS, CHAR_Y_POS)
-    character.zPosition = 10
     addChild(character)
     
+    character.position = CGPointMake(CHAR_X_POS, CHAR_Y_POS)
+    character.zPosition = 10
+    
     character.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(charPushFrames, timePerFrame: 0.1)))
+    
+    character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
+    character.physicsBody?.restitution = 0
+    character.physicsBody?.linearDamping = 0.1
+    character.physicsBody?.allowsRotation = false
+    character.physicsBody?.mass = 0.1
+    character.physicsBody?.dynamic = false
+    physicsWorld.gravity = CGVectorMake(0.0, -10) /// only active if dynamic is set to true...or so i think
   }
+  
+  func jump(gesture: UITapGestureRecognizer) {
+    
+    if isJumping == false {
+      isJumping = true
+      character.physicsBody?.dynamic = true
+      character.physicsBody?.applyImpulse(CGVectorMake(0.0, 60))
+    }
+    
+    
+  }
+  
   
   override func update(currentTime: CFTimeInterval) {
     groundMovement()
+    
+    if ceil(character.position.y) < CHAR_Y_POS {
+      character.physicsBody?.dynamic = false
+      character.position = CGPointMake(CHAR_X_POS, CHAR_Y_POS)
+      isJumping = false
+    }
   }
 }
 
