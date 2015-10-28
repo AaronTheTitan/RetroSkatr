@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91788C421BE16361002AC666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91788C411BE16361002AC666 /* AppDelegate.swift */; };
+		91788C441BE16361002AC666 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 91788C431BE16361002AC666 /* GameScene.sks */; };
+		91788C461BE16361002AC666 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91788C451BE16361002AC666 /* GameScene.swift */; };
+		91788C481BE16361002AC666 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91788C471BE16361002AC666 /* GameViewController.swift */; };
+		91788C4A1BE16361002AC666 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91788C491BE16361002AC666 /* Game.xcassets */; };
+		91788C4D1BE16361002AC666 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91788C4B1BE16361002AC666 /* Main.storyboard */; };
+		91788C4F1BE16361002AC666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91788C4E1BE16361002AC666 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		91788C3E1BE16361002AC666 /* RetroSkatr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetroSkatr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91788C411BE16361002AC666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91788C431BE16361002AC666 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		91788C451BE16361002AC666 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		91788C471BE16361002AC666 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		91788C491BE16361002AC666 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		91788C4C1BE16361002AC666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91788C4E1BE16361002AC666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91788C501BE16361002AC666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91788C3B1BE16361002AC666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91788C351BE16361002AC666 = {
+			isa = PBXGroup;
+			children = (
+				91788C401BE16361002AC666 /* RetroSkatr */,
+				91788C3F1BE16361002AC666 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91788C3F1BE16361002AC666 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91788C3E1BE16361002AC666 /* RetroSkatr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91788C401BE16361002AC666 /* RetroSkatr */ = {
+			isa = PBXGroup;
+			children = (
+				91788C411BE16361002AC666 /* AppDelegate.swift */,
+				91788C431BE16361002AC666 /* GameScene.sks */,
+				91788C451BE16361002AC666 /* GameScene.swift */,
+				91788C471BE16361002AC666 /* GameViewController.swift */,
+				91788C491BE16361002AC666 /* Game.xcassets */,
+				91788C4B1BE16361002AC666 /* Main.storyboard */,
+				91788C4E1BE16361002AC666 /* Assets.xcassets */,
+				91788C501BE16361002AC666 /* Info.plist */,
+			);
+			path = RetroSkatr;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91788C3D1BE16361002AC666 /* RetroSkatr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91788C531BE16361002AC666 /* Build configuration list for PBXNativeTarget "RetroSkatr" */;
+			buildPhases = (
+				91788C3A1BE16361002AC666 /* Sources */,
+				91788C3B1BE16361002AC666 /* Frameworks */,
+				91788C3C1BE16361002AC666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RetroSkatr;
+			productName = RetroSkatr;
+			productReference = 91788C3E1BE16361002AC666 /* RetroSkatr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91788C361BE16361002AC666 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Aaron Bradley";
+				TargetAttributes = {
+					91788C3D1BE16361002AC666 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 91788C391BE16361002AC666 /* Build configuration list for PBXProject "RetroSkatr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91788C351BE16361002AC666;
+			productRefGroup = 91788C3F1BE16361002AC666 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91788C3D1BE16361002AC666 /* RetroSkatr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91788C3C1BE16361002AC666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91788C4D1BE16361002AC666 /* Main.storyboard in Resources */,
+				91788C441BE16361002AC666 /* GameScene.sks in Resources */,
+				91788C4F1BE16361002AC666 /* Assets.xcassets in Resources */,
+				91788C4A1BE16361002AC666 /* Game.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91788C3A1BE16361002AC666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91788C461BE16361002AC666 /* GameScene.swift in Sources */,
+				91788C481BE16361002AC666 /* GameViewController.swift in Sources */,
+				91788C421BE16361002AC666 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		91788C4B1BE16361002AC666 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91788C4C1BE16361002AC666 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91788C511BE16361002AC666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		91788C521BE16361002AC666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91788C541BE16361002AC666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = RetroSkatr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AaronTheTitan.RetroSkatr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		91788C551BE16361002AC666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = RetroSkatr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AaronTheTitan.RetroSkatr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91788C391BE16361002AC666 /* Build configuration list for PBXProject "RetroSkatr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91788C511BE16361002AC666 /* Debug */,
+				91788C521BE16361002AC666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91788C531BE16361002AC666 /* Build configuration list for PBXNativeTarget "RetroSkatr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91788C541BE16361002AC666 /* Debug */,
+				91788C551BE16361002AC666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91788C361BE16361002AC666 /* Project object */;
+}
