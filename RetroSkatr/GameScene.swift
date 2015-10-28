@@ -63,6 +63,12 @@ class GameScene: SKScene {
     for var x = 0; x < ASP_PIECES; x++ {
       let asp = SKSpriteNode(imageNamed: "asphalt")
 //      asp.zPosition = 4;
+      
+      let collider = SKPhysicsBody(rectangleOfSize: CGSizeMake(asp.size.width, 5), center: CGPointMake(0, -20))
+      collider.dynamic = false
+      
+      asp.physicsBody = collider
+      
       asphaltPieces.append(asp)
       
       
@@ -114,12 +120,19 @@ class GameScene: SKScene {
     
     character.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(charPushFrames, timePerFrame: 0.1)))
     
-    character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
+    let frontColliderSize = CGSizeMake(5, character.size.height * 0.80)
+    let frontCollider = SKPhysicsBody(rectangleOfSize: frontColliderSize, center: CGPointMake(25, 0))
+    
+    let bottomColliderSize = CGSizeMake(character.size.width / 2, 5)
+    let bottomCollider = SKPhysicsBody(rectangleOfSize: bottomColliderSize, center: CGPointMake(0, -(character.size.height / 2) + 5))
+    
+    character.physicsBody = SKPhysicsBody(bodies: [frontCollider, bottomCollider])
+    
     character.physicsBody?.restitution = 0
     character.physicsBody?.linearDamping = 0.1
     character.physicsBody?.allowsRotation = false
     character.physicsBody?.mass = 0.1
-    character.physicsBody?.dynamic = false
+    character.physicsBody?.dynamic = true
     physicsWorld.gravity = CGVectorMake(0.0, -10) /// only active if dynamic is set to true...or so i think
   }
   
@@ -127,7 +140,6 @@ class GameScene: SKScene {
     
     if isJumping == false {
       isJumping = true
-      character.physicsBody?.dynamic = true
       character.physicsBody?.applyImpulse(CGVectorMake(0.0, 60))
     }
     
@@ -138,11 +150,12 @@ class GameScene: SKScene {
   override func update(currentTime: CFTimeInterval) {
     groundMovement()
     
-    if ceil(character.position.y) < CHAR_Y_POS {
-      character.physicsBody?.dynamic = false
-      character.position = CGPointMake(CHAR_X_POS, CHAR_Y_POS)
-      isJumping = false
+    if isJumping {
+      if floor(character.physicsBody!.velocity.dy) == 0 {
+        isJumping = false
+      }
     }
+
   }
 }
 
