@@ -12,6 +12,8 @@ class Player: SKSpriteNode {
   
   // Character setup
   var charPushFrames = [SKTexture]()
+  var charCrashFrames = [SKTexture]()
+  
   let CHAR_X_POS: CGFloat = 130
   let CHAR_Y_POS: CGFloat = 180
   var isJumping = false
@@ -28,10 +30,13 @@ class Player: SKSpriteNode {
       charPushFrames.append(SKTexture(imageNamed: "push\(x)"))
     }
     
+    for var x = 0; x < 9; x++ {
+      charCrashFrames.append(SKTexture(imageNamed: "crash\(x)"))
+    }
+    
     self.position = CGPointMake(CHAR_X_POS, CHAR_Y_POS)
     self.zPosition = 10
     
-    self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(charPushFrames, timePerFrame: 0.1)))
     
     let frontColliderSize = CGSizeMake(5, self.size.height * 0.80)
     let frontCollider = SKPhysicsBody(rectangleOfSize: frontColliderSize, center: CGPointMake(25, 0))
@@ -49,15 +54,29 @@ class Player: SKSpriteNode {
     
     self.physicsBody?.categoryBitMask = GameManager.sharedInstance.COLLIDER_PLAYER
     self.physicsBody?.contactTestBitMask = GameManager.sharedInstance.COLLIDER_OBSTACLE
+    
+    playPushAnim()
   }
   
   func jump() {
     if isJumping == false {
+      runAction(SKAction.playSoundFileNamed("sfxOllie.wav", waitForCompletion: false))
       isJumping = true
       self.physicsBody?.applyImpulse(CGVectorMake(0.0, 60))
     }
-    
   }
+  
+  func playPushAnim() {
+    removeAllActions()
+    self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(charPushFrames, timePerFrame: 0.1)))
+  }
+  
+  func playCrashAnim() {
+    removeAllActions()
+    self.runAction(SKAction.animateWithTextures(charCrashFrames, timePerFrame: 0.04))
+  }
+  
+  
   
   override func update() {
     if isJumping {

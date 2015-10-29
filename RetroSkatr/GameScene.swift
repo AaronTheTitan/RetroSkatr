@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
   
@@ -28,8 +29,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   
   var backgroundActions = [SKAction]()
   var buildings = [SKSpriteNode]()
+  var obstacles = [SKSpriteNode]()
   
   var player: Player!
+  var musicPlayer: AVAudioPlayer!
   
   override func didMoveToView(view: SKView) {
     
@@ -46,8 +49,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     player = Player()
     addChild(player)
     
+    
     let dumpster = Dumpster()
     addChild(dumpster)
+    self.obstacles.append(dumpster)
+    
+    let dumpsterTop = DumpsterTop()
+    addChild(dumpsterTop)
+    dumpsterTop.position = CGPointMake(dumpster.position.x, dumpster.position.y + 50)
+    obstacles.append(dumpsterTop)
+    
+    dumpsterTop.startMoving()
     dumpster.startMoving()
     
     for var x = 0; x < 3; x++ {
@@ -58,6 +70,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(building)
         building.startMoving()
       })
+    }
+    
+    playLevelMusic()
+  }
+  
+  func playLevelMusic() {
+    
+    let levelMusicURL = NSBundle.mainBundle().URLForResource("musicMain", withExtension: "wav")!
+    
+    do {
+      musicPlayer = try AVAudioPlayer(contentsOfURL: levelMusicURL)
+      musicPlayer.numberOfLoops = -1
+      musicPlayer.prepareToPlay()
+      musicPlayer.play()
+    } catch {
+      
     }
   }
   
@@ -244,10 +272,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
   }
   
+  
   func didBeginContact(contact: SKPhysicsContact) {
     
     if contact.bodyA.categoryBitMask == GameManager.sharedInstance.COLLIDER_OBSTACLE || contact.bodyB.categoryBitMask == GameManager.sharedInstance.COLLIDER_OBSTACLE {
-      print("Boom we hit a dumpster cause we suck at skatin")
+      self.removeAllActions()
+      musicPlayer.stop()
+      
+      runAction(SKAction.playSoundFileNamed("sfxGameOver.wav", waitForCompletion: false))
+      
+      player.playCrashAnim()
+      
+      for node in asphaltPieces {
+        node.removeAllActions()
+      }
+      
+      for node in sidewalkPieces {
+        node.removeAllActions()
+      }
+      
+      for var x = 0; x < 3; x++ {
+        farBG[x].removeAllActions()
+        midBG[x].removeAllActions()
+        frontBG[x].removeAllActions()
+      }
+      
+      for obs in obstacles {
+        obs.removeAllActions()
+      }
+      
+      for bld in buildings {
+        bld.removeAllActions()
+      }
+      
     }
   }
 }
